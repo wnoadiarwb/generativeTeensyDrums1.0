@@ -83,9 +83,6 @@ void loop() {
   if (step > NUMSTEPS)
   { 
     step = 0; 
-//    bars++;
-
-//      bars = 0;
   }
   if(digitalRead(33) == LOW){
   randomize();
@@ -121,13 +118,13 @@ void playDrums(int drum, int pos){
 }
 
 void randomize(){
-//  for(int i=0; i<=32; i++){
+  
   for(int i=0; i<=4; i++){
     track[random(4)][random(15)][0] = 1;
     track[random(4)][random(15)][0] = 0;
   }
 
-    drum1.frequency(random(35,100));
+  drum1.frequency(random(35,100));
   drum1.length(random(100));
   drum1.secondMix(random(0.1));
   drum1.pitchMod(random(0.75));
@@ -185,11 +182,8 @@ void displaySequence(int track[][16][15], int step) {
       }
     }
   }
-//  step indicator
-// if looks bad consider a rectangle
+//  step indicator GUI
   display.drawRect(off + ((step)*horizSpacing), 0, horizSpacing+1, 29, BLACK);
-//  display.drawFastVLine( off + ((step)*horizSpacing),0,33,BLACK);
-//  display.drawFastVLine( off + ((step+1)*horizSpacing),0,33,BLACK);
   display.drawFastVLine( off + ((step+1)*horizSpacing),0,29,WHITE);
   display.drawFastVLine( off + ((step)*horizSpacing),0,29,WHITE);
   display.display();
