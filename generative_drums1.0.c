@@ -32,7 +32,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, 4);
  * ----- Parameters -----
  *  0 = ON/OFF
  *  1 = OSC PITCH
- *  2 = 
+ *  2 = TBD
  */
 int track[NUMTRACKS][NUMSTEPS][NUMPARAMS];
 static uint32_t next;
